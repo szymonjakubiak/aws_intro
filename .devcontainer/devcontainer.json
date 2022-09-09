@@ -1,9 +1,16 @@
 {
-    "build": { "dockerfile": "Dockerfile" },
-  
-    "customizations": {
-      "vscode": {
-        "extensions": ["ms-python.python", "ms-python.vscode-pylance", "eamodio.gitlens"]
-      }
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "eamodio.gitlens"
+      ]
     }
+  }
 }
