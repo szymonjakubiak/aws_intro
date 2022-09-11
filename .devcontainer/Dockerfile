@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get -y install git curl unzip groff software-properties-common
 
-ARG PYTHON_VERSION=3.8
+ARG PYTHON_VERSION=3.9
 RUN add-apt-repository ppa:deadsnakes/ppa \
     && apt-get update \
     && apt-get -y install python${PYTHON_VERSION}-venv python${PYTHON_VERSION}-dev
