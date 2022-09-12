@@ -4,15 +4,19 @@
     "context": ".."
   },
   "remoteUser": "vscode",
+  "runArgs": [
+    "--env-file",
+    ".env"
+  ],
   "postCreateCommand": "bash .devcontainer/init.sh",
   "customizations": {
     "vscode": {
       "extensions": [
-		"ms-python.python",
-		"ms-python.vscode-pylance",
-		"mhutchie.git-graph",
-		"mutantdino.resourcemonitor"
-	],
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "mhutchie.git-graph",
+        "mutantdino.resourcemonitor"
+      ],
       "settings": {
         "editor.formatOnSave": true,
         "python.formatting.provider": "black",
