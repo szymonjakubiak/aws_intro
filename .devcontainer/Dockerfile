@@ -12,10 +12,10 @@ RUN add-apt-repository ppa:deadsnakes/ppa \
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
     && unzip awscliv2.zip \
     && ./aws/install
-
 RUN curl -fsSL https://deb.nodesource.com/setup_16.17 | bash - \
-    && apt-get install -y nodejs
-    
+    && apt-get install -y nodejs npm
+RUN npm install -g aws-cdk
+
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
