@@ -12,9 +12,6 @@ RUN add-apt-repository ppa:deadsnakes/ppa \
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
     && unzip awscliv2.zip \
     && ./aws/install
-RUN curl -fsSL https://deb.nodesource.com/setup_16.17 | bash - \
-    && apt-get install -y nodejs npm
-RUN npm install -g aws-cdk
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -24,3 +21,10 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
 
 USER ${USERNAME}
 RUN curl -sSL https://install.python-poetry.org | python${PYTHON_VERSION} -
+
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash  \
+    && export NVM_DIR="$HOME/.nvm" \
+    && . $NVM_DIR/nvm.sh \
+    && nvm install --lts \
+    && npm install -g aws-cdk
+    
