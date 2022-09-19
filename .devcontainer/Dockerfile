@@ -27,4 +27,3 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | b
     && . $NVM_DIR/nvm.sh \
     && nvm install --lts \
     && npm install -g aws-cdk
-    
